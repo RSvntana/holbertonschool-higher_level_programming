@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
                 if last == 0 or last >= elm[1]:
                     number += elm[1]
                 elif last < elm[1]:
-                    num += elm[1] - (last * 2)
+                    number += elm[1] - (last * 2)
 
                 last = number
 
