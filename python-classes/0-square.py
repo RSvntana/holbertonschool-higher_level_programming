@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""
+0. My first square
+An empty class Square that defines a square
+"""
 class Square:
-    def __init__(self, side_length):
-        self.side_length = side_length
-
-    def calculate_area(self):
-        return self.side_length ** 2
-
-    def calculate_perimeter(self):
-        return 4 * self.side_length
+    """Square Class
+    This class don't do anything for the moment
+    """
+    pass
