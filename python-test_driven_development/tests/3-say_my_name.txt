@@ -1,0 +1,22 @@
+>>> say_my_name("John", "Doe")
+    My name is John Doe
+    >>> say_my_name("Bob")
+    My name is Bob 
+    >>> say_my_name(12, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+    >>> say_my_name("Smith", 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+    >>> say_my_name(None, "Doe")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+    >>> say_my_name("", "")
+    My name is
