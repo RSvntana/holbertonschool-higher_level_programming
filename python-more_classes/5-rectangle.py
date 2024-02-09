@@ -3,6 +3,7 @@
 This is a docstring for the Rectangle class.
 """
 
+
 class Rectangle:
     """
     This is a docstring for the Rectangle class.
@@ -75,11 +76,11 @@ class Rectangle:
             if i != self.__height - 1:
                 rect.append("\n")
         return "".join(rect)
-
+    
     def __repr__(self):
         """ Represtion """
         rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) +  ")"
+        rect += ", " + str(self.__height) + ")"
         return rect
 
     def __del__(self):
