@@ -4,6 +4,8 @@ This is a docstring for the Rectangle class.
 """
 
 class Rectangle:
+    
+    
     """
     This is a docstring for the Rectangle class.
     """
@@ -70,7 +72,8 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Compares the areas of two rectangles and returns the rectangle with the larger area.
+        Compares the areas of two rectangles and returns
+        the rectangle with the larger area.
 
         Args:
             rect_1 (Rectangle): The first rectangle to compare.
