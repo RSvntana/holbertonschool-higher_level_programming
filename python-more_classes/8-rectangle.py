@@ -3,6 +3,7 @@
 This is a docstring for the Rectangle class.
 """
 
+
 class Rectangle:
     """
     This is a docstring for the Rectangle class.
@@ -73,17 +74,19 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Compares the areas of two rectangles and returns the rectangle with the larger area.
-            
+        Compares the areas of two rectangles and returns
+         the rectangle with the larger area.
+
         Args:
             rect_1 (Rectangle): The first rectangle to compare.
             rect_2 (Rectangle): The second rectangle to compare.
-            
+
         Returns:
             Rectangle: The rectangle with the larger area.
-            
+ 
         Raises:
-            TypeError: If either rect_1 or rect_2 is not an instance of Rectangle.
+            TypeError: If either rect_1 or rect_2
+            is not an instance of Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -105,7 +108,7 @@ class Rectangle:
 
     def __repr__(self):
         """ Represtion """
-        rect = "Rectangle(" + str(self.__width)
+        rect = "Rectangle"( + str(self.__width))
         rect += ", " + str(self.__height) +  ")"
         return rect
 
