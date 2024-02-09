@@ -83,7 +83,7 @@ class Rectangle:
 
         Returns:
             Rectangle: The rectangle with the larger area.
- 
+
         Raises:
             TypeError: If either rect_1 or rect_2
             is not an instance of Rectangle.
@@ -108,8 +108,8 @@ class Rectangle:
 
     def __repr__(self):
         """ Represtion """
-        rect = "Rectangle"( + str(self.__width))
-        rect += ", " + str(self.__height) +  ")"
+        rect = "Rectangle" + str(self.__width)
+        rect += ", " + str(self.__height) + ")"
         return rect
 
     def __del__(self):
