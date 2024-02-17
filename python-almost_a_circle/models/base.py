@@ -72,7 +72,7 @@ class Base:
         Returns:
             Base: Instance of the class.
         """
-        dummy_instance = cls(1)  # Creating a dummy instance with arbitrary values
+        dummy_instance = cls(1)
         dummy_instance.update(**dictionary)
         return dummy_instance
 
