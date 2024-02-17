@@ -32,6 +32,7 @@ class TestSquare(unittest.TestCase):
         s = Square(5, 3, 4, 1)
         d = s.to_dictionary()
         self.assertEqual(d, {'id': 1, 'size': 5, 'x': 3, 'y': 4})
-        
+
+
 if __name__ == '__main__':
     unittest.main()

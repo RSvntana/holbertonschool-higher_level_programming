@@ -49,7 +49,8 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file(list_rectangles_input)
         list_rectangles_output = Rectangle.load_from_file()
 
-        self.assertEqual(len(list_rectangles_input), len(list_rectangles_output))
+        self.assertEqual(len(list_rectangles_input),
+                         len(list_rectangles_output))
         self.assertIsInstance(list_rectangles_output[0], Rectangle)
         self.assertIsInstance(list_rectangles_output[1], Rectangle)
 
@@ -69,6 +70,7 @@ class TestBase(unittest.TestCase):
     def test_load_from_file(self):
         """Test the load_from_file method of the Base class"""
         # Complete the test logic according to your needs.
+
 
 if __name__ == '__main__':
     unittest.main()
