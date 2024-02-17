@@ -1,34 +1,48 @@
 import unittest
+import json
 from models.square import Square
 
-
 class TestSquare(unittest.TestCase):
+    def test_init(self):
+        s1 = Square(5)
+        self.assertEqual(s1.size, 5)
+
+    def test_area(self):
+        s1 = Square(3)
+        self.assertEqual(s1.area(), 9)
+
+    def test_display(self):
+        s1 = Square(4)
+        expected_output = "####\n####\n####\n####\n"
+        with self.assertLogs() as logs:
+            s1.display()
+        self.assertEqual(logs.output, [expected_output])
 
     def test_str(self):
-        s = Square(5, 3, 4, 1)
-        self.assertEqual(str(s), "[Square] (1) 3/4 - 5")
-
-    def test_size(self):
-        s = Square(10)
-        self.assertEqual(s.size, 10)
-        s.size = 20
-        self.assertEqual(s.size, s.width, s.height, 20)
+        s1 = Square(4, 2, 1, 12)
+        self.assertEqual(str(s1), "[Square] (12) 2/1 - 4")
 
     def test_update(self):
-        sq = Square(5, 3, 4, 1)
-        sq.update(2)
-        self.assertEqual(str(sq), "[Square] (2) 3/4 - 5")
-        sq.update(3, 10)
-        self.assertEqual(str(sq), "[Square] (3) 3/4 - 10")
-        sq.update(4, 10, 5)
-        self.assertEqual(str(sq), "[Square] (4) 5/4 - 10")
-        sq.update(5, 10, 5, 2)
-        self.assertEqual(str(sq), "[Square] (5) 5/2 - 10")
+        s1 = Square(5, 10, 10)
+        s1.update(89)
+        self.assertEqual(str(s1), "[Square] (89) 10/10 - 5")
+        s1.update(89, 2)
+        self.assertEqual(str(s1), "[Square] (89) 10/10 - 2")
+        s1.update(89, 2, 3)
+        self.assertEqual(str(s1), "[Square] (89) 3/10 - 2")
+        s1.update(89, 2, 3, 4)
+        self.assertEqual(str(s1), "[Square] (89) 3/4 - 2")
+
+    def test_update_kwargs(self):
+        s1 = Square(5, 10, 10)
+        s1.update(size=1)
+        self.assertEqual(str(s1), "[Square] ({}) 10/10 - 1".format(s1.id))
+        s1.update(x=2, size=3)
+        self.assertEqual(str(s1), "[Square] ({}) 2/10 - 3".format(s1.id))
+        s1.update(y=1, size=2, x=3, id=89)
+        self.assertEqual(str(s1), "[Square] (89) 3/1 - 2")
 
     def test_to_dictionary(self):
-        s = Square(5, 3, 4, 1)
-        d = s.to_dictionary()
-        self.assertEqual(d, {'id': 1, 'size': 5, 'x': 3, 'y': 4})
-
-if __name__ == '__main__':
-    unittest.main()
+        s1 = Square(10, 2, 9)
+        s1_dict = s1.to_dictionary()
+        self.assertEqual(s1_dict, {'id': 1, 'size': 10, 'x': 2, 'y': 9})
